@@ -119,9 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9251799281e6a4c3c8ecfc6a551f73b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThrowableItem: {fileID: 0}
-  TargetLocationMarker: {fileID: 0}
-  TargetAreaStart: {x: -2.6, y: -2.6}
-  TargetAreaEnd: {x: 2.6, y: 2.6}
-  MarkerToThrowDelay: 4
-  ThrowToNextMarkerInterval: 6
+  Item: {fileID: 114289243198981064, guid: b1d70e33f9dd54713ba5d1aebf8b2ee3, type: 2}
+  TargetLocationMarker: {fileID: 1647482329587874, guid: 5d55ccede2a564e9ba8eb542258a0417,
+    type: 2}
+  TargetAreaStart: {x: -7.5, y: -7.5}
+  TargetAreaEnd: {x: 7.5, y: 7.5}
+  MarkerToThrowDelay: 3
+  MarkerDisappearDelay: 1
+  NextMarkerDelay: 4

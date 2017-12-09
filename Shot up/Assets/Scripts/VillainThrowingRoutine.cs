@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class VillainThrowingRoutine : Routine
 {
 
-	public GameObject ThrowableItem;
+	public ThrowableItem Item;
 	public GameObject TargetLocationMarker;
 	public Vector2 TargetAreaStart;
 	public Vector2 TargetAreaEnd;
@@ -34,11 +34,19 @@ public class VillainThrowingRoutine : Routine
 			
 			Debug.Log("VillainThrowingRoutine.throwItem(): New target: " + target);
 
-			GameObject markerInstance = Instantiate(TargetLocationMarker, new Vector3(target.x / transform.localScale.x, 0.05f, target.y / transform.localScale.z), Quaternion.identity);
+			GameObject markerInstance = Instantiate(
+				TargetLocationMarker, 
+				new Vector3(target.x, 0.05f, target.y), 
+				Quaternion.identity);
 			
 			yield return new WaitForSecondsRealtime(MarkerToThrowDelay);
+
+			ThrowableItem itemInstance = Instantiate(
+				Item,
+				transform.position,
+				Quaternion.identity);
+			itemInstance.Fire(target);
 			
-			// TODO Throw ThrowableItem towards target coords
 			
 			yield return new WaitForSecondsRealtime(MarkerDisappearDelay);
 			Destroy(markerInstance);

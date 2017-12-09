@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TargetMarker
+  m_Name: ExplosiveProjectile
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.97794116, g: 0.27324829, b: 0.49194598, a: 1}
-    - _EmissionColor: {r: 0.42647058, g: 0.12543252, b: 0.2179302, a: 1}
+    - _Color: {r: 0.625, g: 0, b: 0.19396544, a: 1}
+    - _EmissionColor: {r: 0.8602941, g: 0, b: 0.26433605, a: 1}
