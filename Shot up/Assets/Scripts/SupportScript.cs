@@ -17,26 +17,28 @@ public class SupportScript : MonoBehaviour {
 		var other = o;
 		if(other.tag == "Crowd"){
 			var agent = other.gameObject.GetComponent<NavMeshAgent>();
-			if(direction == Direction.Left){
-				var target = transform.position + new Vector3(-range, 0, 0);
-				agent.SetDestination(target);
-			}
-			if (direction == Direction.Right)
+			if(agent.isActiveAndEnabled)
 			{
-				var target = transform.position + new Vector3(range, 0, 0);
-				agent.SetDestination(target);
-			}
-			if (direction == Direction.Up)
-			{
-				var target = transform.position + new Vector3(0, 0, range);
-				agent.SetDestination(target);
-			}
-			if (direction == Direction.Down)
-			{
-				var target = transform.position + new Vector3(0, 0, -range);
-				agent.SetDestination(target);
-			}
-			
+				if(direction == Direction.Left){
+					var target = transform.position + new Vector3(-range, 0, 0);
+					agent.SetDestination(target);
+				}
+				if (direction == Direction.Right)
+				{
+					var target = transform.position + new Vector3(range, 0, 0);
+					agent.SetDestination(target);
+				}
+				if (direction == Direction.Up)
+				{
+					var target = transform.position + new Vector3(0, 0, range);
+					agent.SetDestination(target);
+				}
+				if (direction == Direction.Down)
+				{
+					var target = transform.position + new Vector3(0, 0, -range);
+					agent.SetDestination(target);
+				}
+			}	
 		}
 	}
 }
