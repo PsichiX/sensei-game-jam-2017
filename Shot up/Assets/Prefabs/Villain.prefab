@@ -120,8 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThrowableItem: {fileID: 0}
-  TargetLocationMarker: {fileID: 0}
-  TargetAreaStart: {x: -2.6, y: -2.6}
-  TargetAreaEnd: {x: 2.6, y: 2.6}
-  MarkerToThrowDelay: 4
-  ThrowToNextMarkerInterval: 6
+  TargetLocationMarker: {fileID: 1647482329587874, guid: 5d55ccede2a564e9ba8eb542258a0417,
+    type: 2}
+  TargetAreaStart: {x: -7.5, y: -7.5}
+  TargetAreaEnd: {x: 7.5, y: 7.5}
+  MarkerToThrowDelay: 3
+  MarkerDisappearDelay: 1
+  NextMarkerDelay: 4
