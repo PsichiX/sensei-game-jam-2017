@@ -55,7 +55,7 @@
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
      <Compile Include="Assets\Inventory.cs" />
      <Compile Include="Assets\InventoryUI.cs" />
-     <Compile Include="Assets\Item.cs" />
+     <Compile Include="Assets\ItemScript.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
      <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />

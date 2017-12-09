@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour {
+	public GameObject activeItem;	
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void Update(){
+		if(Input.GetMouseButtonDown(0) && (activeItem != null)){
+			Debug.Log(Input.mousePosition);
+		}
 	}
 }
