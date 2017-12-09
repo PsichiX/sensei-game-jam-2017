@@ -8,9 +8,7 @@ public class ExplosiveProjectile : ThrowableItem
 	
 	public float Speed = 1.0f;
 
-	private Vector2 target = Vector2.zero;
 	private float timeLeft;
-	//private float velocity;
 	private bool flying = false;
 	
 	// Use this for initialization
@@ -36,8 +34,6 @@ public class ExplosiveProjectile : ThrowableItem
 
 	public override void Fire(Vector2 target)
 	{
-		this.target = target;
-		
 		Vector3 totalTranslation = new Vector3(
 			target.x - transform.position.x,
 			0.0f,
