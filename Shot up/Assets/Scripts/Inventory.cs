@@ -24,10 +24,7 @@ public class Inventory : MonoBehaviour {
 			worldpos.y = 0;
 			var item = Instantiate<GameObject>(activeItem);
 			item.transform.position = worldpos;
-
-
 			activeItem = null;
-			Debug.Log(worldpos);
 		}
 	}
 }
