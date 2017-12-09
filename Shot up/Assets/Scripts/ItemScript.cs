@@ -7,7 +7,6 @@ public class ItemScript : MonoBehaviour {
 	public Inventory inventory;
 
 	public void OnClick(){
-		Debug.Log("dupa");
 		inventory.activeItem = itemPrefab;
 	}
 }
