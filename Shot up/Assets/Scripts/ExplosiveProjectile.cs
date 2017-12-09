@@ -7,9 +7,10 @@ public class ExplosiveProjectile : ThrowableItem
 {
 	
 	public float Speed = 1.0f;
+	public float ExplosionRadius = 1.0f;
 
 	private float timeLeft;
-	private bool flying = false;
+	//private bool flying = false;
 	
 	// Use this for initialization
 	//void Start () {
@@ -19,17 +20,30 @@ public class ExplosiveProjectile : ThrowableItem
 	// Update is called once per frame
 	void Update ()
 	{
-		if (flying)
-		{
+		//if (flying)
+		//{
 			timeLeft -= Time.deltaTime;
 			if (timeLeft <= 0.0f)
 			{
-				flying = false;
+				//flying = false;
 				GetComponent<Rigidbody>().velocity = Vector3.zero;
-				Debug.Log("asplosions");
-				// TODO asplosions
+				/*Explosion explosion = Instantiate(
+					ExplosionEffect,
+					transform.position,
+					Quaternion.identity);*/
+
+				Collider[] affected = Physics.OverlapSphere(transform.position, 2.0f);
+				foreach (Collider collider in affected)
+				{
+					if (collider.tag == "Crowd")
+					{
+						Destroy(collider.gameObject);
+					}
+				}
+				
+				Destroy(gameObject);
 			}
-		}
+		//}
 	}
 
 	public override void Fire(Vector2 target)
@@ -45,7 +59,7 @@ public class ExplosiveProjectile : ThrowableItem
 			Vector3.Normalize(totalTranslation),
 			new Vector3(Speed, Speed, Speed));
 
-		flying = true;
+		//flying = true;
 	}
 	
 }
