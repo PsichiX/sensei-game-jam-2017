@@ -13,7 +13,7 @@ public class ExplosiveProjectile : ThrowableItem
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f)
         {
-            AudioSource.PlayClipAtPoint(explode, transform.position);
+            AudioSource.PlayClipAtPoint(explode, transform.position, 2.0f);
 
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             Collider[] affected = Physics.OverlapSphere(transform.position, ExplosionRadius);
@@ -30,7 +30,7 @@ public class ExplosiveProjectile : ThrowableItem
 
     public override void Fire(Vector2 target)
     {
-        AudioSource.PlayClipAtPoint(cat, transform.position);
+        AudioSource.PlayClipAtPoint(cat, transform.position, 2.0f);
         Vector3 totalTranslation = new Vector3(
             target.x - transform.position.x,
             0.0f,
