@@ -126,7 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c6e1c6ad131472887c63ced61ac733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 4340008385881532}
+  Nav: {fileID: 195405288666981118}
+  Sprite: {fileID: 212430986261062932}
   TrackingSupports: 1
   Tiles: []
 --- !u!136 &136103065303913732
