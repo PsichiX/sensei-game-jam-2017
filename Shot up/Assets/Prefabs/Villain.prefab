@@ -124,8 +124,8 @@ MonoBehaviour:
     type: 2}
   TargetAreaStart: {x: -7.5, y: -7.5}
   TargetAreaEnd: {x: 7.5, y: 7.5}
-  MarkerToThrowDelay: 3
+  MarkerToThrowDelay: 2.5
   MarkerDisappearDelay: 0.5
-  NextMarkerDelay: 4
+  NextMarkerDelay: 3.5
   TilePrefab: {fileID: 114762120389382168, guid: 4ed365e99475547678526c94e5d2cc53,
     type: 2}

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 136103065303913732}
   - component: {fileID: 23368894898189620}
   - component: {fileID: 195405288666981118}
+  - component: {fileID: 114814710795840166}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Crowd
@@ -84,6 +85,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881616707224752}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114814710795840166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1881616707224752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c6e1c6ad131472887c63ced61ac733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tiles: []
 --- !u!136 &136103065303913732
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -106,7 +119,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 3.5
+  m_Speed: 2.2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
