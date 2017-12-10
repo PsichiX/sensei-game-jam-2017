@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System;
-using DefaultNamespace;
-
 public class SupportScript : MonoBehaviour
 {
     [Serializable]
     public enum Direction { Left, Right, Up, Down };
-
     public Direction direction = Direction.Left;
     public float range = 5;
 

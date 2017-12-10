@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEditor;
 using UnityEngine;
+[RequireComponent(typeof(AudioSource))]
 
 public class Inventory : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Inventory : MonoBehaviour
     public uint MaxSupportAgents = 5;
 
     public LinkedQueue<GameObject> supportAgents = new LinkedQueue<GameObject>();
+    public AudioClip supportAudio;
 
     public void Start()
     {
@@ -35,10 +37,11 @@ public class Inventory : MonoBehaviour
                 Destroy(oldestAgent);
             }
             supportAgents.Enqueue(item);
-            
+
             item.GetComponentInChildren<SupportScript>().SetInventoryRef(this);
-            
+
             item.transform.position = worldpos;
+            AudioSource.PlayClipAtPoint(supportAudio, item.transform.position);
             activeItem = null;
         }
     }

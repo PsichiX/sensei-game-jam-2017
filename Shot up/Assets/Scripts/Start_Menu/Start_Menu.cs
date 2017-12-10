@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
-public class Start : MonoBehaviour
+public class Start_Menu : MonoBehaviour
 {
     public GameObject gameStart;
-
+    public void Start(){
+    }
     public void StartGame()
     {
         SceneManager.LoadScene("Main");
@@ -21,4 +23,5 @@ public class Start : MonoBehaviour
     {
         SceneManager.LoadScene("Settings");
     }
+ 
 }

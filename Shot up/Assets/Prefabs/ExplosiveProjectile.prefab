@@ -108,7 +108,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf5e51ffb82a145d7a6992802f8d6a16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Speed: 12
   ExplosionRadius: 2
+  explode: {fileID: 8300000, guid: 55e4134ce794c3b449e98afb06e54e29, type: 3}
+  cat: {fileID: 8300000, guid: 784280ae71879fb4d86dc3accf5925fe, type: 3}
