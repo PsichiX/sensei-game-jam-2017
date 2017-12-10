@@ -18,7 +18,7 @@ public class VillainThrowingRoutine : Routine
 	
 	public override void StartRoutine()
 	{
-		Debug.Log("VillainThrowingRoutine.StartRoutine(): throwItem() coroutine starting");
+		//Debug.Log("VillainThrowingRoutine.StartRoutine(): throwItem() coroutine starting");
 		StartCoroutine(throwItem());
 	}
 
@@ -32,7 +32,7 @@ public class VillainThrowingRoutine : Routine
 				Random.Range(TargetAreaStart.y,
 					TargetAreaEnd.y));
 			
-			Debug.Log("VillainThrowingRoutine.throwItem(): New target: " + target);
+			//Debug.Log("VillainThrowingRoutine.throwItem(): New target: " + target);
 
 			GameObject markerInstance = Instantiate(
 				TargetLocationMarker, 
