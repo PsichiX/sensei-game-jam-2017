@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class DoorScript : MonoBehaviour
 {
-
+    public AudioClip door;
     public static int score;
     public TextMeshProUGUI text;
     
@@ -17,8 +19,9 @@ public class DoorScript : MonoBehaviour
     {
         if (other.tag == "Crowd")
         {
-            score += 1;
             var agent = other.gameObject;
+            score += 1;
+            AudioSource.PlayClipAtPoint(door, agent.transform.position);
             Destroy(agent);
             text.SetText("Score: {0}", score);
         }

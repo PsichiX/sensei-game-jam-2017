@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+[RequireComponent(typeof(AudioSource))]
 
 public class Inventory : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Inventory : MonoBehaviour
     public GameObject activeItem;
     public static Resolution currentResolution;
     public int widthResolution;
+	public AudioClip supportAudio;
 
     public void Start()
     {
@@ -23,6 +25,7 @@ public class Inventory : MonoBehaviour
             worldpos.y = 0;
             var item = Instantiate(activeItem);
             item.transform.position = worldpos;
+            AudioSource.PlayClipAtPoint(supportAudio, item.transform.position);
             activeItem = null;
         }
     }
