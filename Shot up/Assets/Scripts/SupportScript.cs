@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System;
+using DefaultNamespace;
 
 public class SupportScript : MonoBehaviour
 {
@@ -48,4 +49,5 @@ public class SupportScript : MonoBehaviour
 			}
 		}
 	}
+	
 }
