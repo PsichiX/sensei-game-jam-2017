@@ -1,65 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Assertions.Comparers;
+﻿using UnityEngine;
 
 public class ExplosiveProjectile : ThrowableItem
 {
-	
-	public float Speed = 1.0f;
-	public float ExplosionRadius = 1.0f;
+    public float Speed = 1.0f;
+    public float ExplosionRadius = 1.0f;
 
-	private float timeLeft;
-	//private bool flying = false;
-	
-	// Use this for initialization
-	//void Start () {
-	//	
-	//}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		//if (flying)
-		//{
-			timeLeft -= Time.deltaTime;
-			if (timeLeft <= 0.0f)
-			{
-				//flying = false;
-				GetComponent<Rigidbody>().velocity = Vector3.zero;
-				/*Explosion explosion = Instantiate(
-					ExplosionEffect,
-					transform.position,
-					Quaternion.identity);*/
+    private float timeLeft;
 
-				Collider[] affected = Physics.OverlapSphere(transform.position, 2.0f);
-				foreach (Collider collider in affected)
-				{
-					if (collider.tag == "Crowd")
-					{
-						Destroy(collider.gameObject);
-					}
-				}
-				
-				Destroy(gameObject);
-			}
-		//}
-	}
+    void Update()
+    {
+        timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0.0f)
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-	public override void Fire(Vector2 target)
-	{
-		Vector3 totalTranslation = new Vector3(
-			target.x - transform.position.x,
-			0.0f,
-			target.y - transform.position.z);
-		
-		timeLeft = totalTranslation.magnitude / Speed;
+            Collider[] affected = Physics.OverlapSphere(transform.position, 2.0f);
+            foreach (Collider collider in affected)
+                if (collider.tag == "Crowd")
+                    Destroy(collider.gameObject);
 
-		GetComponent<Rigidbody>().velocity = Vector3.Scale(
-			Vector3.Normalize(totalTranslation),
-			new Vector3(Speed, Speed, Speed));
+            Destroy(gameObject);
+        }
+    }
 
-		//flying = true;
-	}
-	
+    public override void Fire(Vector2 target)
+    {
+        Vector3 totalTranslation = new Vector3(
+            target.x - transform.position.x,
+            0.0f,
+            target.y - transform.position.z);
+
+        timeLeft = totalTranslation.magnitude / Speed;
+
+        GetComponent<Rigidbody>().velocity = Vector3.Scale(
+            Vector3.Normalize(totalTranslation),
+            new Vector3(Speed, Speed, Speed));
+    }
 }

@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class GameScript : MonoBehaviour
 {
-    float timeLeft = 10;
+    public float timeLeft = 60;
     public TextMeshProUGUI timeText;
 
     void Update()
     {
-        if (timeLeft <= 0)
+        if (timeLeft <= 0 || FindObjectsOfType<Agent>().Length == 0)
         {
+            // TODO: open results view.
             SceneManager.LoadScene("Start_Scene");
             return;
         }
