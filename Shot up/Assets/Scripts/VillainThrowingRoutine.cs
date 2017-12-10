@@ -70,7 +70,7 @@ public class VillainThrowingRoutine : Routine
 					targetTile.Agents[index].transform.position.z);
 			}
 			
-			Debug.Log("VillainThrowingRoutine.throwItem(): New target: " + target);
+			//Debug.Log("VillainThrowingRoutine.throwItem(): New target: " + target);
 
 			GameObject markerInstance = Instantiate(
 				TargetLocationMarker, 
