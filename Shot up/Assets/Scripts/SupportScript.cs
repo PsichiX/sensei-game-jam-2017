@@ -13,6 +13,13 @@ public class SupportScript : MonoBehaviour
     public Direction direction = Direction.Left;
     public float range = 5;
 
+	private Inventory inventoryRef;
+
+	public void SetInventoryRef(Inventory inventory)
+	{
+		inventoryRef = inventory;
+	}
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -49,5 +56,9 @@ public class SupportScript : MonoBehaviour
 			}
 		}
 	}
-	
+
+	private void OnDestroy()
+	{
+		inventoryRef.supportAgents.Remove(gameObject.transform.parent.gameObject);
+	}
 }

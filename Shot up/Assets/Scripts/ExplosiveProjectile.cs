@@ -16,7 +16,7 @@ public class ExplosiveProjectile : ThrowableItem
 
             Collider[] affected = Physics.OverlapSphere(transform.position, 2.0f);
             foreach (Collider collider in affected)
-                if (collider.tag == "Crowd")
+                if (collider.tag == "Crowd" || collider.tag == "Support")
                     Destroy(collider.gameObject);
 
             Destroy(gameObject);

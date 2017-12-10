@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public int widthResolution;
     public uint MaxSupportAgents = 5;
 
-    private LinkedQueue<GameObject> supportAgents = new LinkedQueue<GameObject>();
+    public LinkedQueue<GameObject> supportAgents = new LinkedQueue<GameObject>();
 
     public void Start()
     {
@@ -35,6 +35,8 @@ public class Inventory : MonoBehaviour
                 Destroy(oldestAgent);
             }
             supportAgents.Enqueue(item);
+            
+            item.GetComponentInChildren<SupportScript>().SetInventoryRef(this);
             
             item.transform.position = worldpos;
             activeItem = null;
