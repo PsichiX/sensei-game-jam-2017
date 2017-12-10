@@ -13,13 +13,13 @@ public class ExplosiveProjectile : ThrowableItem
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f)
         {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            AudioSource.PlayClipAtPoint(explode, transform.position);
 
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
             Collider[] affected = Physics.OverlapSphere(transform.position, ExplosionRadius);
             foreach (Collider collider in affected)
                 if (collider.tag == "Crowd" || collider.tag == "Support")
                 {
-                    AudioSource.PlayClipAtPoint(explode, collider.gameObject.transform.position);
                     Destroy(collider.gameObject);
                 }
 
