@@ -5,6 +5,7 @@ using UnityEngine;
 public class Agent : MonoBehaviour
 {
 
+	public bool TrackingSupports = true;
 	public List<TargetTile> Tiles = new List<TargetTile>();
 
 	private void OnDestroy()

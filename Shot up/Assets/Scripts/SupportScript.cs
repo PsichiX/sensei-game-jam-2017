@@ -15,7 +15,7 @@ public class SupportScript : MonoBehaviour {
 	void OnTriggerEnter(Collider o)
 	{
 		var other = o;
-		if(other.tag == "Crowd"){
+		if(other.tag == "Crowd" && other.GetComponent<Agent>().TrackingSupports){
 			var agent = other.gameObject.GetComponent<NavMeshAgent>();
 			if(agent.isActiveAndEnabled)
 			{
