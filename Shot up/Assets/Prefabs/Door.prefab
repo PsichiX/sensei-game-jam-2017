@@ -303,7 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f6542e715b3214490203442ba7e74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  door: {fileID: 8300000, guid: 265ff811e0d53974f88a1c3fc571b27d, type: 3}
+  text: {fileID: 0}
 --- !u!114 &114918306836416414
 MonoBehaviour:
   m_ObjectHideFlags: 1

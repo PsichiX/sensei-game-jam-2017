@@ -18,6 +18,7 @@ public class ExplosiveProjectile : ThrowableItem
             Collider[] affected = Physics.OverlapSphere(transform.position, ExplosionRadius);
             foreach (Collider collider in affected)
                 if (collider.tag == "Crowd" || collider.tag == "Support")
+                {
                     AudioSource.PlayClipAtPoint(explode, collider.gameObject.transform.position);
                     Destroy(collider.gameObject);
                 }
