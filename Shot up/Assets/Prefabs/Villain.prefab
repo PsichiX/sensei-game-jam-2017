@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 23395241561643156}
   - component: {fileID: 114248297739767726}
   - component: {fileID: 114399644183644034}
+  - component: {fileID: 114368263967856108}
   m_Layer: 0
   m_Name: Villain
   m_TagString: Untagged
@@ -55,6 +56,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4487340396094426}
+  - component: {fileID: 135274226729068272}
+  - component: {fileID: 114640289185764460}
+  - component: {fileID: 54997587378781690}
   m_Layer: 0
   m_Name: GrannyProximityCollider
   m_TagString: Untagged
@@ -84,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1851565426576788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0209818, y: -4.4282875, z: 2.562021}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4114016051141106}
@@ -144,6 +148,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1759389142495314}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54997587378781690
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851565426576788}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!65 &65215756624827814
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -167,6 +186,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b18a7d24c0f4a9ca7c2115a9f19bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114368263967856108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1759389142495314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb66980dd5e84004b733f7cb40c3d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetAreaStart: {x: -7.5, y: 7.5}
+  TargetAreaEnd: {x: 7.5, y: 7.5}
+  FiringInterval: 7.5
+  TilePrefab: {fileID: 114762120389382168, guid: 4ed365e99475547678526c94e5d2cc53,
+    type: 2}
 --- !u!114 &114399644183644034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,6 +223,29 @@ MonoBehaviour:
   NextMarkerDelay: 3.5
   TilePrefab: {fileID: 114762120389382168, guid: 4ed365e99475547678526c94e5d2cc53,
     type: 2}
+--- !u!114 &114640289185764460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851565426576788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d30e0d8e4396482098e34cd46e5e931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &135274226729068272
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851565426576788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212834801495383688
 SpriteRenderer:
   m_ObjectHideFlags: 1
