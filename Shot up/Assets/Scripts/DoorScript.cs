@@ -3,8 +3,10 @@ using TMPro;
 
 public class DoorScript : MonoBehaviour
 {
+
     public static int score;
     public TextMeshProUGUI text;
+    
 
     void Start()
     {

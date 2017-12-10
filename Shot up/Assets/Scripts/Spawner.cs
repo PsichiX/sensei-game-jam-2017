@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     public int CrowdCount = 100;
     public float Range = 10;
 
-    private void Start()
+    private void Awake()
     {
         var pos = transform.position;
 
