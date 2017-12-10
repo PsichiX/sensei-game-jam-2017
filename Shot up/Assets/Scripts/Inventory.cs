@@ -2,6 +2,7 @@
 
 public class Inventory : MonoBehaviour
 {
+    public Camera castCamera;
     public GameObject activeItem;
     public static Resolution currentResolution;
     public int widthResolution;
@@ -17,8 +18,8 @@ public class Inventory : MonoBehaviour
         Vector2 mousePos = Input.mousePosition;
         if (Input.GetMouseButtonDown(0) && (activeItem != null) && (mousePos.x < widthResolution))
         {
-            var worldpos = Camera.main.ScreenToWorldPoint(
-                new Vector3(mousePos.x, mousePos.y, Camera.main.nearClipPlane));
+            var worldpos = castCamera.ScreenToWorldPoint(
+                new Vector3(mousePos.x, mousePos.y, castCamera.nearClipPlane));
             worldpos.y = 0;
             var item = Instantiate(activeItem);
             item.transform.position = worldpos;
