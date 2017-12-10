@@ -4,13 +4,20 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 
-public class SupportScript : MonoBehaviour {
-	[Serializable]	
-	public enum Direction {Left, Right, Up, Down};
-	
-	public Direction direction = Direction.Left;
-	public float range = 5;
+public class SupportScript : MonoBehaviour
+{
+    [Serializable]
+    public enum Direction { Left, Right, Up, Down };
 
+    public Direction direction = Direction.Left;
+    public float range = 5;
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.color = Color.white;
+    }
 
 	void OnTriggerEnter(Collider o)
 	{
@@ -38,7 +45,7 @@ public class SupportScript : MonoBehaviour {
 					var target = transform.position + new Vector3(0, 0, -range);
 					agent.SetDestination(target);
 				}
-			}	
+			}
 		}
 	}
 }
